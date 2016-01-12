@@ -6,6 +6,7 @@
 #  origin      :text
 #  destination :text
 #  date        :text
+#  time        :text
 #  plane_id    :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
