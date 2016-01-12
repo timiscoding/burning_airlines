@@ -6,6 +6,7 @@
 #  origin      :text
 #  destination :text
 #  date        :text
+#  time        :text
 #  plane_id    :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -18,7 +19,6 @@ class FlightsController < ApplicationController
   # GET /flights.json
   def index
     @flights = Flight.all
-    @query = Flights.where(origin = :origin and destination = :destination)
   end
 
   # GET /flights/1

@@ -1,0 +1,11 @@
+class CreateSeats < ActiveRecord::Migration
+  def change
+    create_table :seats do |t|
+      t.integer :flight_id
+      t.integer :user_id
+      t.boolean :status
+
+      t.timestamps null: false
+    end
+  end
+end
