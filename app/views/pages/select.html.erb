@@ -1,0 +1,37 @@
+<h1>Testing testing! Select your flight page! </h1>
+<br>
+
+<%= @search %>
+
+<br>
+<br>
+<br>
+
+ <div class="row">
+ <table>
+ <thead>
+   <tr>
+     <th width = "50">Select</th>
+     <th width ="110">Flight #</th>
+     <th width ="150">Date</th>
+     <th width ="150">Departs</th>
+     <th width ="110">From</th>
+     <th width ="110">To</th>
+   </tr>
+ </thead>
+
+   <% @search.each do |flight| %>
+     <tbody>
+       <tr>
+         <td><%= radio_button_tag :flight_id, flight.id %></td>
+         <td><%= flight.plane_id %></td>
+         <td><%= flight.date %></td>
+         <td><%= flight.origin %></td>
+         <td><%= flight.destination %></td>
+       </tr>      
+     </tbody>
+   <% end %>
+   </table>
+   <%= submit_tag "Select Flight", :name => nil, class: "button" %>
+
+ </div>

@@ -1,6 +1,40 @@
-<h1>Pages#start</h1>
-<p>Find me in app/views/pages/start.html.erb</p>
+<h1>Flight Booker</h1>
 
-<h1>Testing github changes.</h1>
 
+<div id="container">
+
+ <form action="/select">
+
+    <div id="dropdown">
+       <h3>Departing:</h3>
+      <select name="departure_id">
+        <%= @origin.each do |li| %>
+          <option value="<%= li %>"><%= li %></option>
+        <% end %>
+      </select>
+    </div>
+
+
+    <div id="dropdown">
+    <h3>Arriving:</h3>
+       <select name="arrival_id">
+        <%= @destination.each do |li| %>
+          <option value="<%= li %>"><%= li %></option>
+        <% end %>
+      </select>
+    </div><br>
+
+    <div id="dropdown2">
+    <h3>Date:</h3>
+      <select name="flight_id">
+        <%= @date.each do |li| %>
+          <option value="<%= li %>"><%= li %></option>
+        <% end %>
+      </select>
+    </div>
+
+
+    <button>Search</button>
+ </form>
+</div>
 
