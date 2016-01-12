@@ -11,27 +11,32 @@
  <table>
  <thead>
    <tr>
-     <th width = "50">Select</th>
-     <th width ="110">Flight #</th>
-     <th width ="150">Date</th>
-     <th width ="150">Departs</th>
-     <th width ="110">From</th>
-     <th width ="110">To</th>
+      <th width = "50">Select</th>
+      <th width ="110">Flight #</th>
+      <th width ="150">Date</th>
+      <th width ="150">Time</th>
+      <th width ="110">From</th>
+      <th width ="110">To</th>
+      <th width ="110">Availability</th>
    </tr>
  </thead>
 
+<form action="/seating">
    <% @search.each do |flight| %>
      <tbody>
        <tr>
          <td><%= radio_button_tag :flight_id, flight.id %></td>
          <td><%= flight.plane_id %></td>
          <td><%= flight.date %></td>
+         <td><%= flight.time %></td>
          <td><%= flight.origin %></td>
          <td><%= flight.destination %></td>
+         <td>Nothing.</td>
        </tr>      
      </tbody>
    <% end %>
    </table>
    <%= submit_tag "Select Flight", :name => nil, class: "button" %>
+</form>
 
  </div>
