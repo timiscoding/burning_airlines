@@ -5,7 +5,7 @@ class FlightsController < ApplicationController
   # GET /flights.json
   def index
     @flights = Flight.all
-    @query = Flights.where(origin = params[:origin] and destination = params[:destination])
+    @query = Flights.where(origin = :origin and destination = :destination)
   end
 
   # GET /flights/1
