@@ -1,4 +1,6 @@
 
+
+
 Plane.destroy_all
 
 p1 = Plane.create :rows => 3, :columns => 3
