@@ -3,13 +3,14 @@ var PagesController = Paloma.controller('Pages');
 
 PagesController.prototype.seating = function(){
   var desiredFlightID = parseInt( this.params["flight_id"] );
-    
+
   $.ajax('/seats.json').done(function(data){
     var seats = _.where( data, { flight_id: desiredFlightID })
     seats = _.sortBy(seats, 'id');
     console.log("sorting" + seats);
     _.each(seats, function(seat) {
       console.log(seat.status);
+
       var $seat = $('#seatMap').append( $('<div>').addClass('seatCSS').addClass("seatSelectable").addClass("seat").attr('id', seat.id).attr('status', seat.status) ); 
     });
 
@@ -46,9 +47,12 @@ PagesController.prototype.seating = function(){
       
     });
 
+
     // Run a loop(probably) that loops through the array that we just created, it searches the page for the div with the matching id, and then removes the status attribute of that div
 
+
    
+
   });
 
   $(document).ready(function() {
@@ -76,7 +80,7 @@ PagesController.prototype.seating = function(){
         method: 'PUT',
         data: { status: desiredStatus }
       }, function(){
-       console.log("status changed"); 
+       console.log("status changed");
       });
       // console.log('selected ' + $(this).attr('id'));
     })
