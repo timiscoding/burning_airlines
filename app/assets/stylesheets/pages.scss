@@ -2,17 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.seat {
+.seatCSS {
   display: inline-block;
   border: 2px solid black;
   width: 100px;
   height: 100px;
 }
 
-.seat[status=false] {
+.seatSelectable[status=false] {
   background-color: blue;
 }
 
-.seat[status=true] {
+.seatSelectable[status=true] {
   background-color: red;
 }
+
+.reserved {
+  background-color: grey;
+}
+

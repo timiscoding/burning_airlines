@@ -1,13 +1,15 @@
-<br>
-Testing.
-<br>
-<br>
+<h1>Select Your Seat</h1>
 
-<p>Plane ID From Selected Flight: <%= @selected_flight[:plane_id] %></p>
-<p>Plane ID from Optional Planes: <%= @planeID[:id] %> </p>
-<p>Rows from Selected Plane: <%= @rows %></p> 
-<p>Columns from Selected Plane: <%= @columns %></p> 
 
+<div id="selectDetails">
+<strong>Flight Number:</strong> <%= @selected_flight[:id] %>
+<br>
+<strong>Origin:</strong> <%= @selected_flight[:origin] %> 
+<br>
+<strong>Destination:</strong> <%= @selected_flight[:destination] %>
+<br>
+<strong>Departure Time:</strong> <%= @selected_flight[:time] %>
+</div>
 
 
 

@@ -1,14 +1,12 @@
 <h1>Testing testing! Select your flight page! </h1>
 <br>
 
-<%= @search %>
-
 <br>
 <br>
 <br>
 
  <div class="row">
- <table>
+ <table class="tableSelect">
  <thead>
    <tr>
       <th width = "50">Select</th>
@@ -26,7 +24,7 @@
      <tbody>
        <tr>
          <td><%= radio_button_tag :flight_id, flight.id %></td>
-         <td><%= flight.plane_id %></td>
+         <td><%= flight.id %></td>
          <td><%= flight.date %></td>
          <td><%= flight.time %></td>
          <td><%= flight.origin %></td>
