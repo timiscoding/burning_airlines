@@ -17,8 +17,13 @@ class ApplicationController < ActionController::Base
   end
 
   def check_if_logged_in
-    # raise 'hell'
-    if @current_user.nil? && params[:controller] != 'sessions'
+    controller = params[:controller]
+    action = params[:action]
+    unless (controller == 'sessions' && action == 'new') ||
+          (controller == 'sessions' && action == 'create') ||
+          (controller == 'users' && action == 'new') ||
+          (controller == 'users' && action == 'create') ||
+          @current_user.present?
       redirect_to login_path
     end
   end
