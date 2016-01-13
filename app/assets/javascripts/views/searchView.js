@@ -10,7 +10,9 @@ PagesController.prototype.seating = function(){
     _.each(seats, function(seat) {
       console.log(seat.status);
       var $seat = $('#seatMap').append( $('<div>').addClass("seat").attr('id', seat.id).attr('status', seat.status) ); 
+       _.sortBy(seats, 'id');
     });
+   
   });
 
   $(document).ready(function() {

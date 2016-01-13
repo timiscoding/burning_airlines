@@ -41,6 +41,9 @@ class PagesController < ApplicationController
     @reservation.flight_id = @flight_id
     @reservation.user_id = @user_id
     @reservation.save
+
+    @recentReservation = Reservation.last
+
   end
 end
 
