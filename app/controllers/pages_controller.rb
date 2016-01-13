@@ -17,4 +17,19 @@ class PagesController < ApplicationController
 
     @search = @u.select{|x| x.origin == params[:departure_id] || x.destination == params[:arrival_id] || x.date = params[:flight_id]} # no query to db
   end
+
+  def seating
+    @flights = Flight.all
+    @selected_flight = Flight.find params[:flight_id]
+
+    @planes = Plane.all
+    @selected_plane = @selected_flight[:plane_id]
+    @planeID = Plane.find @selected_plane
+    @rows = @planeID[:rows]
+    @columns = @planeID[:columns]
+
+    
+
+  end
 end
+
