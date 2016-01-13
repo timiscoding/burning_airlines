@@ -59,6 +59,7 @@ Rails.application.routes.draw do
 
    get '/select' => 'pages#select'
    get '/seating' => 'pages#seating'
+   get '/checkout' => 'pages#checkout'
 
   resources :flights
   resources :planes

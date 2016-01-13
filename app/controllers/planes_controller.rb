@@ -11,6 +11,7 @@
 
 class PlanesController < ApplicationController
   before_action :set_plane, only: [:show, :edit, :update, :destroy]
+  before_action :check_if_admin
 
   # GET /planes
   # GET /planes.json
@@ -76,6 +77,10 @@ class PlanesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_plane
       @plane = Plane.find(params[:id])
+    end
+
+    def check_if_admin
+      redirect_to root_path unless @current_user.present? && @current_user.admin?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

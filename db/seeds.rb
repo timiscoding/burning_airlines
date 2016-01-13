@@ -24,7 +24,7 @@ f9 = Flight.create :origin => 'BNE', :destination => 'MEL', :date => '2016/19/03
 User.destroy_all
 
 u1 = User.create :name => 'Chicken', :password => 'chicken'
-u2 = User.create :name => 'Admin', :password => 'chicken'
+u2 = User.create :name => 'Admin', :password => 'chicken', :admin => true
 
 
 # Reservation.destroy_all
