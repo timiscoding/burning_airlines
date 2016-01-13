@@ -5,19 +5,17 @@ Testing.
 
 <p>Plane ID From Selected Flight: <%= @selected_flight[:plane_id] %></p>
 <p>Plane ID from Optional Planes: <%= @planeID[:id] %> </p>
-<p>Rows from Selected Plane: <%= @rows %></p> 
-<p>Columns from Selected Plane: <%= @columns %></p> 
+<p>Rows from Selected Plane: <%= @rows %></p>
+<p>Columns from Selected Plane: <%= @columns %></p>
 
 
-
-
-<form action="/checkout">
-  <button>Submit</button>
-</form>
-
-
+<h3> Select your seat wisely as you can't change your mind</h3>
 
 <div id="seatMap">
-  
+
 
 </div>
+
+<form action="/checkout">
+  <button>Book</button>
+</form>

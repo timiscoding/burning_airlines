@@ -3,17 +3,25 @@ console.log('stuf');
 
 PagesController.prototype.seating = function(){
   var desiredFlightID = parseInt( this.params["flight_id"] );
-    
+
   $.ajax('/seats.json').done(function(data){
     var seats = _.where( data, { flight_id: desiredFlightID })
     seats = _.sortBy(seats, 'id');
     console.log("sorting" + seats);
     _.each(seats, function(seat) {
       console.log(seat.status);
-      var $seat = $('#seatMap').append( $('<div>').addClass("seat").attr('id', seat.id).attr('status', seat.status) ); 
+      var $seat = $('#seatMap').append( $('<div>').addClass("seat").attr('id', seat.id).attr('status', seat.status) );
     });
 
-
+  $.ajax('/reservations.json').done(function(data){
+    var bookedSeats = _.pluck(data, 'seat_id');
+    console.log(bookedSeats)
+    // _.each(bookedSeats, function(id) {
+    //   if $('<div>').attr('id') === id {
+    //     $('<div>').removeAttr('status')
+    //   }else {return};
+    // })
+  });
 
 // [
      // $('#seat').sort(function(a, b){
@@ -24,7 +32,7 @@ PagesController.prototype.seating = function(){
      //    elem.remove();
      //    $(elem).appendTo('#seat');
      //  })
-   
+
   });
 
   $(document).ready(function() {
@@ -52,7 +60,7 @@ PagesController.prototype.seating = function(){
         method: 'PUT',
         data: { status: desiredStatus }
       }, function(){
-       console.log("status changed"); 
+       console.log("status changed");
       });
       // console.log('selected ' + $(this).attr('id'));
     })
