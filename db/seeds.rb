@@ -27,16 +27,16 @@ u1 = User.create :name => 'Chicken', :password => 'chicken'
 u2 = User.create :name => 'Admin', :password => 'chicken'
 
 
-Reservation.destroy_all
+# Reservation.destroy_all
 
-r1 = Reservation.create :row => 2, :column => 2, :user_id => 1, :flight_id => 1
-r2 = Reservation.create :row => 1, :column => 3, :user_id => 1, :flight_id => 2
-r3 = Reservation.create :row => 1, :column => 2, :user_id => 2, :flight_id => 2
+# r1 = Reservation.create :row => 2, :column => 2, :user_id => 1, :flight_id => 1
+# r2 = Reservation.create :row => 1, :column => 3, :user_id => 1, :flight_id => 2
+# r3 = Reservation.create :row => 1, :column => 2, :user_id => 2, :flight_id => 2
 
-Seat.destroy_all
+# Seat.destroy_all
 
-s1 = Seat.create :flight_id => 1, :user_id => "", :status => false
-s2 = Seat.create :flight_id => 1, :user_id => 1, :status => true
-s3 = Seat.create :flight_id => 1, :user_id => "", :status => false
-s4 = Seat.create :flight_id => 1, :user_id => "", :status => false
-s5 = Seat.create :flight_id => 1, :user_id => "", :status => false
+# s1 = Seat.create :flight_id => 1, :status => false
+# s2 = Seat.create :flight_id => 1, :status => true
+# s3 = Seat.create :flight_id => 1, :status => false
+# s4 = Seat.create :flight_id => 1, :status => false
+# s5 = Seat.create :flight_id => 1, :status => false
