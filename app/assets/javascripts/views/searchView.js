@@ -6,11 +6,25 @@ PagesController.prototype.seating = function(){
     
   $.ajax('/seats.json').done(function(data){
     var seats = _.where( data, { flight_id: desiredFlightID })
-    console.log(seats);
+    seats = _.sortBy(seats, 'id');
+    console.log("sorting" + seats);
     _.each(seats, function(seat) {
       console.log(seat.status);
       var $seat = $('#seatMap').append( $('<div>').addClass("seat").attr('id', seat.id).attr('status', seat.status) ); 
     });
+
+
+
+// [
+     // $('#seat').sort(function(a, b){
+     //    return parseInt(a.id) > parseInt(b.id);
+
+     //  }).each(function(){
+     //    var elem = $(this);
+     //    elem.remove();
+     //    $(elem).appendTo('#seat');
+     //  })
+   
   });
 
   $(document).ready(function() {

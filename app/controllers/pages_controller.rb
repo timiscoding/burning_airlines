@@ -31,5 +31,19 @@ class PagesController < ApplicationController
     js :flight_id => params[:flight_id]
 
   end
+  def checkout
+    @reservation = Reservation.new
+    @selected_seat = Seat.find params[:seat_id]
+    @seat_id = @selected_seat[:seat_id]
+    @flight_id = @selected_seat[:flight_id]
+    @user_id = session[:user_id]
+    @reservation.seat_id = params[:seat_id]
+    @reservation.flight_id = @flight_id
+    @reservation.user_id = @user_id
+    @reservation.save
+
+    @recentReservation = Reservation.last
+
+  end
 end
 

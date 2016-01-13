@@ -67,7 +67,7 @@ class SeatsController < ApplicationController
   def destroy
     @seat.destroy
     respond_to do |format|
-      format.html { redirect_to seats_url, notice: 'Seat was successfully destroyed.' }
+      format.html   { redirect_to seats_url, notice: 'Seat was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

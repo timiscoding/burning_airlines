@@ -14,4 +14,5 @@ class Reservation < ActiveRecord::Base
   belongs_to :user
   belongs_to :flight
   has_one :seat
+  validates :seat_id, :uniqueness => {:scope => :flight_id}
 end
