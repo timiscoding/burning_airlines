@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: seats
+#
+#  id         :integer          not null, primary key
+#  flight_id  :integer
+#  status     :boolean          default(FALSE)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class SeatsController < ApplicationController
   before_action :set_seat, only: [:show, :edit, :update, :destroy]
 
@@ -41,7 +52,7 @@ class SeatsController < ApplicationController
   # PATCH/PUT /seats/1.json
   def update
     respond_to do |format|
-      if @seat.update(seat_params)
+      if @seat.update(status: params[:status])
         format.html { redirect_to @seat, notice: 'Seat was successfully updated.' }
         format.json { render :show, status: :ok, location: @seat }
       else
@@ -69,6 +80,6 @@ class SeatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def seat_params
-      params.require(:seat).permit(:flight_id, :user_id, :status)
+      params.require(:seat).permit(:flight_id, :status)
     end
 end

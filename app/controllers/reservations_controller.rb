@@ -3,8 +3,7 @@
 # Table name: reservations
 #
 #  id         :integer          not null, primary key
-#  row        :integer
-#  column     :integer
+#  seat_id    :integer
 #  user_id    :integer
 #  flight_id  :integer
 #  created_at :datetime         not null
@@ -82,6 +81,6 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:row, :column, :user_id, :flight_id)
+      params.require(:reservation).permit(:seat_id, :user_id, :flight_id)
     end
 end

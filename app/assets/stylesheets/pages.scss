@@ -1,3 +1,18 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.seat {
+  display: inline-block;
+  border: 2px solid black;
+  width: 100px;
+  height: 100px;
+}
+
+.seat[status=false] {
+  background-color: blue;
+}
+
+.seat[status=true] {
+  background-color: red;
+}

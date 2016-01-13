@@ -15,6 +15,7 @@
 #             root GET    /                                pages#start
 #           select GET    /select(.:format)                pages#select
 #          seating GET    /seating(.:format)               pages#seating
+#         checkout GET    /checkout(.:format)              pages#checkout
 #          flights GET    /flights(.:format)               flights#index
 #                  POST   /flights(.:format)               flights#create
 #       new_flight GET    /flights/new(.:format)           flights#new

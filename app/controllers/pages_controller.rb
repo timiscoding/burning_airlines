@@ -28,7 +28,7 @@ class PagesController < ApplicationController
     @rows = @planeID[:rows]
     @columns = @planeID[:columns]
 
-    
+    js :flight_id => params[:flight_id]
 
   end
 end
