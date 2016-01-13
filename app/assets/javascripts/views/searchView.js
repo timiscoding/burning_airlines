@@ -30,6 +30,9 @@ PagesController.prototype.seating = function(){
 
       // var reservation = new app.Reservation({seat: '7C'});
       // reservation.save();
+      var $input = $("<input>").attr("name", "seat_id").css("display", "none");
+      $input.val( seat_id );
+      $("form").prepend($input)
 
       $.ajax('/seats/' + seat_id + '.json', {
         method: 'PUT',
