@@ -13,7 +13,8 @@
 #
 
 class FlightsController < ApplicationController
-  before_action :set_flight, only: [:show, :edit, :update, :destroy]
+  before_action :set_flight , only: [:show, :edit, :update, :destroy]
+  before_action :check_if_admin, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /flights
   # GET /flights.json
@@ -79,6 +80,10 @@ class FlightsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_flight
       @flight = Flight.find(params[:id])
+    end
+
+    def check_if_admin
+      redirect_to flights_path unless @current_user.present? && @current_user.admin?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

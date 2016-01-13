@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by :name => params[:username]
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to flights_path
+      redirect_to root_path
     else
       flash[:error] = 'Invalid login'
       redirect_to login_path
