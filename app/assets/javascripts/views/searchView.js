@@ -47,9 +47,8 @@ PagesController.prototype.seating = function(){
            var seatID = parseInt($(seat).attr('id'));
             // console.log( seat );
             if (bookedSeat === seatID){
-                console.log('test', jsonData);
 
-                var reservation = _.findWhere(jsonData, { user_id: seatID });
+                var reservation = _.findWhere(jsonData, { seat_id: seatID });
                 $(seat).removeClass('seat').removeClass('seatSelectable').addClass('reserved').text(reservation.name);
             };
         });
