@@ -1,6 +1,6 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<h1>Please Log In Or Register</h1>
 
+<div id="userSignIn">
 <% if flash[:error] %>
   <%= flash[:error] %>
 <% end %>
@@ -12,5 +12,6 @@
   <%= password_field_tag 'password' %>
   <%= submit_tag 'Login' %>
 <% end %>
+</div>
 
-<%= link_to 'Sign up', new_user_path %>
+<p id="signUpLink"><%= link_to 'Sign up', new_user_path %></p>

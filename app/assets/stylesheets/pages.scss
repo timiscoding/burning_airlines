@@ -7,6 +7,9 @@
   border: 2px solid black;
   width: 100px;
   height: 100px;
+  margin-left: 40px;
+  margin-right: 40px;
+  vertical-align: top;
 }
 
 .seatSelectable[status=false] {
@@ -21,3 +24,12 @@
   background-color: grey;
 }
 
+#userSignIn {
+  margin-left: 43%;
+  margin-right: 43%;
+}
+
+
+#signUpLink {
+  font-size: 20px;
+}

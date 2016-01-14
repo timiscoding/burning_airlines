@@ -10,15 +10,19 @@
 <br>
 
 <strong>Departure Time:</strong> <%= @selected_flight[:time] %>
+<br>
+<strong>Departure Date:</strong> <%= @selected_flight[:date] %>
 </div>
 
 <p></p>
+
 
 <div id="seatMap">
 
 
 </div>
-
+<br>
+<br>
 <form action="/checkout">
-  <button>Book</button>
+  <button id="bookBTN">Book</button>
 </form>

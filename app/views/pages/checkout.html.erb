@@ -1,13 +1,15 @@
-CHECKOUT PAGE:
 
-Booking confirmation details:
+<h1>Booking Confirmation</h1>
 <br>
 <br>
-Reservation #: <%= @recentReservation[:id] %>
+<div id="checkout">
+<strong>Booking Confrimation Number:</strong> <%= @recentReservation[:id] %>
 <br>
-Seat #: <%= @recentReservation[:seat_id] %>
+<strong>Seat Number:</strong> <%= @recentReservation[:seat_id] %>
 <br>
-Flight #: <%= @recentReservation[:flight_id] %>
+<strong>Flight Number:</strong> <%= @recentReservation[:flight_id] %>
 <br>
-User #: <%= @recentReservation[:user_id] %>
+<strong>User #:</strong> <%= @recentReservation[:user_id] %>
 
+<h3>Thank you for choosing Burning Butterfly Airlines!</h4>
+</div>
