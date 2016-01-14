@@ -53,7 +53,7 @@ PagesController.prototype.seating = function(){
     });
 
 
-}, 500);
+}, 200);
 
   $(document).ready(function() {
     $('#seatMap').on('click', ".seat", function(){
@@ -65,7 +65,7 @@ PagesController.prototype.seating = function(){
       } else {
         desiredStatus = "true";
       }
-      $(this).attr("status", desiredStatus);
+      // $(this).attr("status", desiredStatus);
 
       // console.log($(this).attr("id"), $(this).attr("status"));
       var seat_id = $(this).attr("id");
