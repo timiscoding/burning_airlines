@@ -12,7 +12,7 @@ PagesController.prototype.seating = function(){
       _.each(seats, function(seat) {
         // console.log(seat.status);
 
-        var $seat = $('#seatMap').append( $('<div>').addClass('seatCSS').addClass("seatSelectable").addClass("seat").attr('id', seat.id).attr('status', seat.status) ); 
+        var $seat = $('#seatMap').append( $('<div>').addClass('seatCSS').addClass("seatSelectable").addClass("seat").attr('id', seat.id).attr('status', seat.status) );
       });
     });
   }
@@ -34,6 +34,8 @@ PagesController.prototype.seating = function(){
 
   $.ajax('/reservations.json').done(function(data){
       var bookedSeats = _.pluck(data, 'seat_id');
+      // var bookedSeats = _.pick(data, 'seat_id');
+      var jsonData = data;
       // console.log("Seat_Ids from Reservations")
       // Reservation Seat ID's
       _.each(bookedSeats, function(bookedSeat){
@@ -45,8 +47,10 @@ PagesController.prototype.seating = function(){
            var seatID = parseInt($(seat).attr('id'));
             // console.log( seat );
             if (bookedSeat === seatID){
-                // console.log("YAY");
-                $(seat).removeClass('seat').removeClass('seatSelectable').addClass('reserved');
+                console.log('test', jsonData);
+
+                var reservation = _.findWhere(jsonData, { user_id: seatID });
+                $(seat).removeClass('seat').removeClass('seatSelectable').addClass('reserved').text(reservation.name);
             };
         });
       });
@@ -85,7 +89,7 @@ PagesController.prototype.seating = function(){
          // console.log("status changed");
     });
       // console.log('selected ' + $(this).attr('id'));
-    
+
 
     });
 
