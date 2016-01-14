@@ -1,6 +1,10 @@
-<h1>Please Log In Or Register</h1>
+<h1>Welcome to Burning Butterfly Airlines!</h1>
+<h2>Please Log In Or Register</h1>
+
+
 
 <div id="userSignIn">
+<br>
 <% if flash[:error] %>
   <%= flash[:error] %>
 <% end %>
@@ -12,6 +16,7 @@
   <%= password_field_tag 'password' %>
   <%= submit_tag 'Login' %>
 <% end %>
-</div>
+
 
 <p id="signUpLink"><%= link_to 'Sign up', new_user_path %></p>
+</div>

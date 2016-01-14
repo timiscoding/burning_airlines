@@ -62,7 +62,7 @@ div {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 
-  h2 {
+h2 {
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
@@ -95,10 +95,9 @@ h1 {
   text-align: center;
 }
 
-#startSearchBtn {
+h2 {
   text-align: center;
-  margin-left: 47.5%;
-};
+}
 
 td {
   text-align: center;
@@ -128,7 +127,7 @@ th {
 }
 
 #seatMap {
-  border: 2px solid red;
+  border: 2px solid black;
   width: 500px;
   text-align: center;
   margin: auto;
@@ -140,6 +139,14 @@ th {
 }
 
 #checkout {
+  background-color: rgba(222, 222, 222, .8);
+  border: 2px solid black;
+  width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+#container {
   background-color: rgba(222, 222, 222, .8);
   border: 2px solid black;
   width: 800px;
