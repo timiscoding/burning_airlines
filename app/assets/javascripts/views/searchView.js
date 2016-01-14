@@ -8,9 +8,9 @@ PagesController.prototype.seating = function(){
     $.ajax('/seats.json').done(function(data){
       var seats = _.where( data, { flight_id: desiredFlightID })
       seats = _.sortBy(seats, 'id');
-      console.log("sorting" + seats);
+      // console.log("sorting" + seats);
       _.each(seats, function(seat) {
-        console.log(seat.status);
+        // console.log(seat.status);
 
         var $seat = $('#seatMap').append( $('<div>').addClass('seatCSS').addClass("seatSelectable").addClass("seat").attr('id', seat.id).attr('status', seat.status) ); 
       });
@@ -34,18 +34,18 @@ PagesController.prototype.seating = function(){
 
   $.ajax('/reservations.json').done(function(data){
       var bookedSeats = _.pluck(data, 'seat_id');
-      console.log("Seat_Ids from Reservations")
+      // console.log("Seat_Ids from Reservations")
       // Reservation Seat ID's
       _.each(bookedSeats, function(bookedSeat){
         var bookedSeat = bookedSeat;
 
         // Div Seat ID's
-        console.log("Seat_Ids from Divs")
+        // console.log("Seat_Ids from Divs")
         $(".seat").each(function(index, seat){
            var seatID = parseInt($(seat).attr('id'));
-            console.log( seat );
+            // console.log( seat );
             if (bookedSeat === seatID){
-                console.log("YAY");
+                // console.log("YAY");
                 $(seat).removeClass('seat').removeClass('seatSelectable').addClass('reserved');
             };
         });
@@ -67,20 +67,22 @@ PagesController.prototype.seating = function(){
       }
       $(this).attr("status", desiredStatus);
 
-      console.log($(this).attr("id"), $(this).attr("status"));
+      // console.log($(this).attr("id"), $(this).attr("status"));
       var seat_id = $(this).attr("id");
 
       // var reservation = new app.Reservation({seat: '7C'});
       // reservation.save();
       var $input = $("<input>").attr("name", "seat_id").css("display", "none");
       $input.val( seat_id );
-      $("form").prepend($input)
+
+      $("form input").remove();
+      $("form").prepend($input);
 
           $.ajax('/seats/' + seat_id + '.json', {
         method: 'PUT',
           data: { status: desiredStatus }
         }, function(){
-         console.log("status changed");
+         // console.log("status changed");
     });
       // console.log('selected ' + $(this).attr('id'));
     
