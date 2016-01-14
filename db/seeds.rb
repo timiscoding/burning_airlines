@@ -3,14 +3,14 @@
 
 Plane.destroy_all
 
-p1 = Plane.create :rows => 3, :columns => 3
-p2 = Plane.create :rows => 5, :columns => 5
+p1 = Plane.create :rows => 4, :columns => 4
+p2 = Plane.create :rows => 5, :columns => 4
 
 
 Flight.destroy_all
 
 f1 = Flight.create :origin => 'SYD', :destination => 'MEL', :date => '2016/17/03', :plane_id => 1, :time => "10:45am"
-f2 = Flight.create :origin => 'SYD', :destination => 'MEL', :date => '2016/17/03', :plane_id => 1, :time => "3:00pm"
+f2 = Flight.create :origin => 'SYD', :destination => 'MEL', :date => '2016/17/03', :plane_id => 2, :time => "3:00pm"
 f3 = Flight.create :origin => 'SYD', :destination => 'BNE', :date => '2016/17/03', :plane_id => 1, :time => "10:45am"
 f4 = Flight.create :origin => 'SYD', :destination => 'MEL', :date => '2016/18/03', :plane_id => 1, :time => "10:45am"
 f5 = Flight.create :origin => 'MEL', :destination => 'BNE', :date => '2016/18/03', :plane_id => 1, :time => "10:45am"
