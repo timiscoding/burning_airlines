@@ -5,8 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Row</th>
-      <th>Column</th>
+      <th>Seat</th>
       <th>User</th>
       <th>Flight</th>
       <th colspan="3"></th>
@@ -16,8 +15,7 @@
   <tbody>
     <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= reservation.row %></td>
-        <td><%= reservation.column %></td>
+        <td><%= reservation.seat_id %></td>
         <td><%= reservation.user_id %></td>
         <td><%= reservation.flight_id %></td>
         <td><%= link_to 'Show', reservation %></td>
